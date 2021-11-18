@@ -1,12 +1,13 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "ft_strtrim.c"
+#include "libft.h"
+
+char	*get_split_string(const char *s, char c);
 
 int main()
 {
-	char *	s = ft_strtrim("   xxx   xxx", " x");
-	printf("%s\n", s);
+	printf("%s", get_split_string("hola, pepe", ','));
 	return (0);
 }
 
