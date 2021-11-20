@@ -6,98 +6,67 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 12:08:03 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/18 20:17:03 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:31:01 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static char	*trim(const char *s, char delim)
-{
-	char	*trimmed;
-	char	*delim_string;
-
-	delim_string = malloc(2 * sizeof(char));
-	if (delim_string != NULL)
-	{
-		trimmed = NULL;
-		trimmed = ft_strtrim(s, ft_memset(delim_string, delim, 1));
-		if (trimmed != NULL)
-		{
-			return (trimmed);
-		}
-		free(delim_string);
-	}
-	return (NULL);
-}
-
 static int	count_n_splits(char const *s, char delim)
 {
 	int	n_splits;
 	int	i;
-	int	delim_found;
+	int	word_found;
 
 	n_splits = 0;
 	i = 0;
-	delim_found = 0;
-	while (s[i] != '\0')
+	word_found = 0;
+	while (s[i] != 0)
 	{
-		if (s[i] == delim && delim_found == 0)
+		while (s[i] == delim)
+			i++;
+		while (s[i] != delim && s[i] != 0)
+		{
+			i++;
+			word_found = 1;
+		}
+		if (word_found)
 		{
 			n_splits++;
-			delim_found = 1;
+			word_found = 0;
 		}
-		else
-			delim_found = 0;
-		i++;
 	}
-	return (n_splits + 1);
+	return (n_splits);
 }
 
-static char	**init_matrix(int n_splits, char **matrix)
+static int save_string(const char *s, char *string, int end, int len)
 {
-	matrix = malloc((n_splits + 1) * sizeof(char *));
-	if (matrix != NULL)
-	{
-		matrix[n_splits] = NULL;
-	}
-	return (matrix);
-}
-
-static int save_string(const char *s, char**matrix, int index, int end, int len)
-{
-	int	control;
 	int	i;
 
 	i = 0;
-	matrix[index] = malloc((len + 1) * sizeof(char));
-	if (matrix[index] != NULL)
+	while (i < len)
 	{
-		while (i < len)
-		{
-			matrix[index][i] = s[end - len + i];
-			i++;
-		}
-		matrix[index][i] = '\0';
+		string[i] = s[end - len + i];
+		i++;
 	}
-	else
-		control = -1;
-	control = 0;
-	return (control);
+	string[i] = '\0';
+	return (0);
 }
 
-static void	free_matrix(char **matrix, int index)
+static void	free_matrix(char **matrix, int index, int n_splits)
 {
 	int i;
 
 	i = 0;
-	while (i < index)
+	while (i < index) {
 		free(matrix[i++]);
+	}
+	free(matrix[n_splits]);
 	free(matrix);
 }
 
-static void	run_string(const char *s, char **matrix, char delim)
+static int	run_string(const char *s, char **matrix, char delim, int n_splits)
 {
 	int	i;
 	int	current_length;
@@ -110,52 +79,59 @@ static void	run_string(const char *s, char **matrix, char delim)
 	{
 		if (s[i] == delim && current_length != 0)
 		{
-			if (save_string(s, matrix, string_index, i, current_length) == -1)
-				free_matrix(matrix, string_index);
+			matrix[string_index] = malloc((current_length + 1) * sizeof(char));
+			if (matrix[string_index] == NULL)
+				return (-1);
+			if (save_string(s, matrix[string_index], i, current_length) == -1)
+			{
+				free_matrix(matrix, string_index, n_splits);
+				return (-1);
+			}
 			string_index++;
 			current_length = -1;
 		}
+		else if (s[i] == delim && current_length == 0)
+			current_length = -1;
 		current_length++;
 		i++;
 	}
-	if (current_length != 0) {
-		if (save_string(s, matrix, string_index, i, current_length) == -1)
-			free_matrix(matrix, string_index);
+	if (current_length != 0)
+	{
+		if (save_string(s, matrix[string_index], i, current_length) == -1)
+		{
+			free_matrix(matrix, string_index, n_splits);
+			return (-1);
+		}
 	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	*trimmed;
 	int		n_splits;
 	char	**matrix;
 
 	n_splits = 0;
 	matrix = NULL;
-	trimmed = NULL;
-	trimmed = trim(s, c);
-	if (trimmed != NULL)
-	{
-		n_splits = count_n_splits(trimmed, c);
-		matrix = init_matrix(n_splits, matrix);
-		if (matrix != NULL)
-			run_string(trimmed, matrix, c);
-		free(trimmed);
-	}
+	n_splits = count_n_splits(s, c);
+	if (n_splits == 0)
+		return (NULL);
+	matrix = malloc((n_splits + 1) * sizeof(char *));
+	if (matrix == NULL)
+		return (NULL);
+	matrix[n_splits] = NULL;
+	run_string(s, matrix, c, n_splits);
 	return (matrix);
 }
 
-int main()
-{
-	int i = 0;
-	char string[] = "  tripouille  42  ";
-	char **matrix;
-	matrix = NULL;
-	matrix = ft_split(string, ' ');
-	while (i < 3)
-	{
-		printf("%s\n",matrix[i]);
-		i++;
-	}
-	return (0);
-}
+// int main() {
+// 	char string[] = "    hello mr    dude    ";
+// 	char **matrix = ft_split(string, ' ');
+// 	int i = 0;
+// 	while (i < 4)
+// 	{
+// 		printf("String at pos %d: %s\n",i, matrix[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
