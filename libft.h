@@ -6,14 +6,22 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:36:28 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/10/30 12:11:30 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:58:30 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
+#include <stdlib.h>
+
+struct splitter_integers
+{
+	int	i;
+	int	len;
+	int	curr_n;
+	int	n;
+} typedef split_args;
 
 int		ft_atoi(const char *str);
 
@@ -32,6 +40,8 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 
 int		ft_isprint(int c);
+
+char	*ft_itoa(int n);
 
 void	*ft_memchr(const void *s, int c, size_t n);
 

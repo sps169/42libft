@@ -6,7 +6,7 @@
 #    By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 17:42:35 by sperez-s          #+#    #+#              #
-#    Updated: 2021/10/30 12:11:44 by sperez-s         ###   ########.fr        #
+#    Updated: 2021/11/21 13:58:29 by sperez-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC =	ft_atoi.c		\
 		ft_isascii.c	\
 		ft_isdigit.c	\
 		ft_isprint.c	\
+		ft_itoa.c		\
 		ft_memchr.c		\
 		ft_memcmp.c		\
 		ft_memcpy.c		\
