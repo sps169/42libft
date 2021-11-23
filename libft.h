@@ -6,22 +6,24 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:36:28 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/21 13:58:30 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:37:07 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-struct splitter_integers
+struct s_splitter_integers
 {
 	int	i;
 	int	len;
 	int	curr_n;
 	int	n;
-} typedef split_args;
+};
+typedef struct s_splitter_integers	t_split_args;
 
 int		ft_atoi(const char *str);
 
@@ -53,6 +55,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 
 void	*ft_memset(void *b, int c, size_t len);
 
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putendl_fd(char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
+
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -62,6 +72,8 @@ char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
 
 int		ft_strlen(char *s);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 
@@ -74,6 +86,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(char *str, char *to_find, size_t len);
 
 char	*ft_strrchr(const char *s, int c);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	*ft_strtrim(char const *s1, char const *set);
 

@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 12:08:03 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/21 14:02:41 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:50:01 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,12 @@ static int	save_string(const char *s, char *string, int end, int len)
 	return (0);
 }
 
-static int	pre_save_string(const char *s, char **matrix, split_args ints)
+static int	pre_save_string(const char *s, char **matrix, t_split_args ints)
 {
 	int	i;
 
-	if (matrix[ints.curr_n] == NULL)
-		return (-1);
-	if (save_string(s, matrix[ints.curr_n], ints.i, ints.len) == -1)
+	if (matrix[ints.curr_n] == NULL
+		|| save_string(s, matrix[ints.curr_n], ints.i, ints.len) == -1)
 	{
 		i = 0;
 		while (i < ints.curr_n)
@@ -73,7 +72,7 @@ static int	pre_save_string(const char *s, char **matrix, split_args ints)
 
 static int	run_string(const char *s, char **matrix, char delim, int n_splits)
 {
-	split_args	ints;
+	t_split_args	ints;
 
 	ints.i = 0;
 	ints.len = 0;
