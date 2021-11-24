@@ -23,6 +23,6 @@ void	ft_putstr_fd(char *s, int fd)
 		size = ft_strlen(s);
 		while (i < size)
 			write(fd, &s[i++], 1);
-		write(fd, &s[i], 1);
+		write(fd, (void *)0, 1);
 	}
 }
