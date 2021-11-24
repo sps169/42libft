@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:47:29 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/09/26 16:53:18 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:33:23 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dest_size = 0;
 	src_size = 0;
 	i = 0;
-	if (dst != NULL && size != 0)
+	if ((dst != NULL || src != NULL) && size != 0)
 	{
 		while (dst[i++] != '\0')
 			dest_size++;
-	}
-	i = 0;
-	if (src != NULL)
-	{
+		i = 0;
 		while (src[i++] != '\0')
 			src_size++;
 	}
-	if (dst != NULL && src != NULL && size != 0 && dest_size < size)
+	if ((dst != NULL && src != NULL) && size != 0 && dest_size < size)
 	{
 		append(dst, src, size, dest_size);
 	}

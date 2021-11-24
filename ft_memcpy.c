@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:34:26 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/09/19 13:08:38 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:16:37 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char			*char_destiny;
 	char			*char_source;
 
-	i = 0;
-	char_destiny = (char *) dst;
-	char_source = (char *) src;
-	while (i < n)
+	if (dst != NULL || src != NULL)
 	{
-		char_destiny[i] = char_source[i];
-		i++;
+		i = 0;
+		char_destiny = (char *) dst;
+		char_source = (char *) src;
+		while (i < n)
+		{
+			char_destiny[i] = char_source[i];
+			i++;
+		}
 	}
 	return (dst);
 }

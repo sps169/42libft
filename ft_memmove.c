@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 14:04:39 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/09/26 15:46:16 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:23:51 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	psource = (const char *) src;
 	pdestiny = (char *) dst;
 	counter = 0;
-	if (pdestiny > psource)
+	if (pdestiny > psource && (dst != NULL || src != NULL))
 	{
 		counter = len;
 		while (counter != 0)
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (counter < len)
+		while (counter < len && (dst != NULL || src != NULL))
 		{
 			pdestiny[counter] = psource[counter];
 			counter++;

@@ -6,7 +6,7 @@
 #    By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 17:42:35 by sperez-s          #+#    #+#              #
-#    Updated: 2021/11/23 20:37:24 by sperez-s         ###   ########.fr        #
+#    Updated: 2021/11/24 21:30:21 by sperez-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,19 +29,19 @@ SRC =	ft_atoi.c		\
 		ft_memmove.c	\
 		ft_memset.c		\
 		ft_putchar_fd.c	\
-		ft_putnbr_fd.c	\
 		ft_putendl_fd.c	\
+		ft_putnbr_fd.c	\
 		ft_putstr_fd.c	\
 		ft_split.c		\
-		ft_stdrup.c		\
+		ft_strdup.c		\
 		ft_strchr.c		\
 		ft_striteri.c	\
 		ft_strjoin.c	\
+		ft_strlcat.c	\
+		ft_strlcpy.c	\
 		ft_strlen.c		\
 		ft_strmapi.c	\
 		ft_strncmp.c	\
-		ft_strlcat.c	\
-		ft_strlcpy.c	\
 		ft_strncpy.c	\
 		ft_strnstr.c	\
 		ft_strrchr.c	\

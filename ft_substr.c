@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 11:07:40 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/10/02 12:03:17 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:23:46 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s != NULL)
 		s_len = get_s_len(s, start, len);
 	new_str = malloc((s_len + 1) * sizeof(char));
+	if (new_str == NULL)
+		return (NULL);
 	i = 0;
 	if (new_str != NULL)
 	{
