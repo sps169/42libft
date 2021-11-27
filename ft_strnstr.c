@@ -6,11 +6,10 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:55:12 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 13:53:00 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:13:33 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	is_needle(char *haystack, char *needle)

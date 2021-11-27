@@ -6,12 +6,9 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:15:21 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/24 21:11:33 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:11:00 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	ft_is_space(char c)
 {

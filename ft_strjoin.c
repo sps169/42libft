@@ -6,11 +6,11 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 12:05:31 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/10/02 12:21:43 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:13:02 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	get_str_len(char const *s)
 {

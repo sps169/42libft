@@ -6,12 +6,11 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 13:57:47 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/21 14:51:37 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:12:04 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	get_total_int_digits(int n)
 {

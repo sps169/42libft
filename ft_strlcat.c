@@ -6,13 +6,11 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:47:29 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 18:05:13 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:13:11 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 static void	append(char *dst, const char *src, size_t size, size_t dest_size)
 {

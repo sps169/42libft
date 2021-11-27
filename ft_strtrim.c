@@ -6,12 +6,11 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 13:01:57 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 17:33:27 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:13:47 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	get_str_len(char const *s)
 {

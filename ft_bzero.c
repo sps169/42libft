@@ -6,11 +6,11 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 18:55:39 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/09/26 14:16:11 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:57:33 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

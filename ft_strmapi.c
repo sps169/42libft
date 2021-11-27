@@ -6,11 +6,12 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:32:10 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/23 19:43:00 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 18:13:22 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		size;
