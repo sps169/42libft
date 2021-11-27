@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:36:28 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/23 20:37:07 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 16:35:55 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ int		ft_strlen(char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
