@@ -6,13 +6,11 @@
 #    By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 17:42:35 by sperez-s          #+#    #+#              #
-#    Updated: 2021/11/24 21:30:21 by sperez-s         ###   ########.fr        #
+#    Updated: 2021/11/27 18:29:04 by priezu-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-OBJS = $(SRC:.c=.o)
 
 SRC =	ft_atoi.c		\
 		ft_bzero.c		\
@@ -50,6 +48,11 @@ SRC =	ft_atoi.c		\
 		ft_tolower.c	\
 		ft_toupper.c
 
+OBJS = $(SRC:.c=.o)
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
 HEADER = libft.h
 
 CFLAGS = -Wextra -Wall -Werror
@@ -70,10 +73,4 @@ fclean: clean
 
 re: fclean all
 
-
 .PHONY: all clean fclean re
-
-
-
-
-
