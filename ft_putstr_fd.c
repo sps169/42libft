@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:00:01 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/23 20:26:55 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 20:43:19 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	ft_putstr_fd(char *s, int fd)
 		size = ft_strlen(s);
 		while (i < size)
 			write(fd, &s[i++], 1);
-		write(fd, (void *)0, 1);
 	}
 }

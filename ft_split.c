@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 12:08:03 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/23 20:50:01 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 22:24:50 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,15 @@ static int	pre_save_string(const char *s, char **matrix, t_split_args ints)
 {
 	int	i;
 
-	if (matrix[ints.curr_n] == NULL
-		|| save_string(s, matrix[ints.curr_n], ints.i, ints.len) == -1)
+	if (matrix[ints.curr_n] == NULL)
 	{
 		i = 0;
 		while (i < ints.curr_n)
 			free(matrix[i++]);
-		free(matrix[ints.n]);
 		free(matrix);
 		return (-1);
 	}
+	save_string(s, matrix[ints.curr_n], ints.i, ints.len);
 	return (0);
 }
 

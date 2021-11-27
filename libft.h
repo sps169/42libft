@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:36:28 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 16:35:55 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 21:53:31 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,19 @@ char	**ft_split(char const *s, char c);
 
 char	*ft_strdup(const char *s1);
 
-int		ft_strlen(char *s);
+size_t	ft_strlen(const char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
-char	*ft_strnstr(char *str, char *to_find, size_t len);
+char	*ft_strnstr(const char *haystack, char *needle, size_t len);
 
 char	*ft_strrchr(const char *s, int c);
 

@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:25:56 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/23 20:30:24 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 21:53:05 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int		i;
-	int		size;
+	size_t		i;
+	size_t		size;
 
 	i = 0;
 	if (s != NULL)

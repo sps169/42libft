@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 13:01:57 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 18:13:47 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/27 22:10:16 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	get_str_len(char const *s)
 	return (len);
 }
 
-short	is_set_character(char c, const char *set)
+static short	is_set_character(char c, const char *set)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ short	is_set_character(char c, const char *set)
 	return (0);
 }
 
-char	*create_string(char const *s1, size_t new_str_len, int start)
+static char	*create_string(char const *s1, size_t new_str_len, int start)
 {
 	char			*new_str;
 	unsigned int	i;
