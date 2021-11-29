@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:55:12 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 21:58:27 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:26:53 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	is_needle(char *haystack, char *needle)
 	return (is_needle);
 }
 
-char	*ft_strnstr(const char *haystack, char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*first_occ;
 	size_t	i;
@@ -45,7 +45,7 @@ char	*ft_strnstr(const char *haystack, char *needle, size_t len)
 		if (haystack[i] == needle[0] && i + ft_strlen(needle) <= len)
 		{
 			first_occ = (char *)&haystack[i];
-			if (is_needle(first_occ, needle))
+			if (is_needle(first_occ, (char *)needle))
 				return (first_occ);
 			else
 				first_occ = NULL;

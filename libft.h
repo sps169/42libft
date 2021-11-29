@@ -6,7 +6,7 @@
 /*   By: sperez-s <sperez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 12:36:28 by sperez-s          #+#    #+#             */
-/*   Updated: 2021/11/27 21:53:31 by sperez-s         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:26:21 by sperez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
-char	*ft_strnstr(const char *haystack, char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 char	*ft_strrchr(const char *s, int c);
 
